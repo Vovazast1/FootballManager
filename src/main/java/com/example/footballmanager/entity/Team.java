@@ -24,7 +24,7 @@ public class Team {
 
     private Integer transferCommission;
 
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "team", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private List<Player> players = new ArrayList<>();
 
     public Team() {}

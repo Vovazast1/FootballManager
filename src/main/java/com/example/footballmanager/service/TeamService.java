@@ -59,6 +59,8 @@ public class TeamService {
     }
 
     public void deleteTeam(Long id) {
+        findTeamById(id).getPlayers().forEach(player -> player.setTeam(null));
+
         if (teamRepository.existsById(id))
             teamRepository.deleteById(id);
         else
